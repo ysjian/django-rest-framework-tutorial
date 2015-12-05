@@ -24,8 +24,7 @@ def snippet_list(request, format=None):
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def snippet_detail(request, pk, format=None
-                   ):
+def snippet_detail(request, pk, format=None):
     """
     Retrieve, update or delete a snippet instance.
     """
