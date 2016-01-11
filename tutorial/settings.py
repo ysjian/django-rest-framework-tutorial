@@ -53,7 +53,8 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'tutorial.urls'
 
 REST_FRAMEWORK = {
-    'PAGE_SIZE': 5
+    'PAGE_SIZE': 5,
+    'EXCEPTION_HANDLER': 'snippets.exception.global_exception_handler.custom_exception_handler'
 }
 
 TEMPLATES = [
@@ -79,9 +80,9 @@ TEMPLATE_DIRS = (
 WSGI_APPLICATION = 'tutorial.wsgi.application'
 
 TEMPLATE_LOADERS = (
-     'django.template.loaders.filesystem.Loader',
-     'django.template.loaders.app_directories.Loader',
-     'django.template.loaders.eggs.Loader',
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+    'django.template.loaders.eggs.Loader',
 )
 
 # Database

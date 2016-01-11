@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from rest_framework import permissions
 
+from snippets.exception.illegal_state_exception import IllegalStateException
 from snippets.models import Snippet
 from snippets.permissions import IsOwnerOrReadOnly
 from snippets.serializers import SnippetSerializer, UserSerializer
@@ -46,3 +47,6 @@ class SnippetViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
+    def list(self, request, *args, **kwargs):
+        return super(SnippetViewSet, self).list(request, *args, **kwargs)
